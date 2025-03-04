@@ -60,7 +60,7 @@ export const styles = {
     "font-serif font-bold text-gray-50 lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",
   heroSubText:
     "text-gray-200 font-light lg:text-[30px] sm:text-[56px] xs:text-[20px] text-[16px] lg:leading-[40px]",
-  heroSection: "mb-[455px] gap-8 items-center mb-[355px]",
+  heroSection: "mb-[355px] gap-8 items-center mb-[355px]",
 
   nav: {
     container: "w-full  ",
