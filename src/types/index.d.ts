@@ -89,8 +89,10 @@ export type TTimeSlot = {
   currentBookings: number;
 };
 
-export type TService = 
-  Required<Pick<TCommonProps, 'title' | 'icon' | 'link'>>
+export type TService = {
+  id: string;
+  link: string;
+} & Required<Pick<TCommonProps, 'title' | 'icon'>>
 
 export type THeroSection = {
   title: string;

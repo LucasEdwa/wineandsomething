@@ -1,9 +1,10 @@
 import { createBrowserRouter } from 'react-router';
 import { ThemeProvider } from './context/ThemeContext';
-import HeroSection from './components/HeroSection';
 import { Layout } from './pages/Layout';
 import { NotFound } from './pages/NotFound';
-
+import { Home } from './pages/Home';
+import EventsHolder from './components/EventsHolder';
+import Booking from './pages/Booking';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,7 +15,9 @@ const router = createBrowserRouter([
     ),
     errorElement: <NotFound />,
     children: [
-      { path: "/", element: <HeroSection /> },
+      { path: "/", element: <Home /> },
+      { path: "/events", element: <EventsHolder /> },
+      { path: "/booking/:eventId", element: <Booking /> },
     ],
   },
 ]);

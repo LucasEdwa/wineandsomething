@@ -88,8 +88,9 @@ useGLTF.preload('/wine__cups_table_-_lowpoly.glb');
 
 export default function Background3D() {
   const { theme } = useTheme();
+
   return (
-    <div className="absolute bg-red-900/30 top-0 left-0 w-full h-screen -z-10">
+    <div className={`absolute top-0 left-0 w-full ${theme.background} h-screen -z-10`} >
       <Canvas shadows camera={{ position: [0, 2, 5], fov: 45 }}>
         <Suspense fallback={null}>
           <Stage environment="city" intensity={0.6}>

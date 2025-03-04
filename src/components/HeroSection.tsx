@@ -9,8 +9,8 @@ const HeroSection = () => {
   const { theme } = useTheme();
 
   return (
-    <div className={`${styles.padding} ${styles.flexCol} gap-8 items-center ${theme.background}`}>
-      
+    <div className={`${styles.padding} ${styles.flexCol} ${theme.background} ${styles.heroSection}`}>
+
       <h1 className={`${styles.heroHeadText} ${theme.text}`}>
         {title}
       </h1>

@@ -10,7 +10,7 @@ export default function Navigation() {
 
   return (
     <nav className={`${styles.nav.container} ${theme.background}`}>
-      <div className={styles.flexRow}>
+      <div className={`${styles.flexRow} ${styles.padding}  ${theme.background}`}>
         {/* Desktop Navigation */}
         <ul className={`hidden sm:flex ${styles.nav.links}`}>
           {navLinks.map(({ id, title, path }) => (
@@ -39,8 +39,8 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className={`sm:hidden ${theme.background}  left-0 right-0 p-4`}>
-          <ul className={`${styles.flexCol} gap-4`}>
+        <div className={`sm:hidden ${theme.background} absolute left-0 right-0 p-4 z-10`}>
+          <ul className={`${styles.flexCol} `}>
             {navLinks.map(({ id, title, path }) => (
               <li key={id}>
                 <Link 
