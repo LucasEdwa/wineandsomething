@@ -1,7 +1,6 @@
 import { TNavLink, TService, THeroSection } from '../types';
 import { TEvent } from '../types/index.d';
 import wine1 from '../assets/wine.1.jpg';
-import wine2 from '../assets/wine.2.jpg';
 import wine3 from '../assets/wine.3.jpg';
 import wine4 from '../assets/wine.4.jpg';
 
