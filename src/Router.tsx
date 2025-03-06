@@ -5,6 +5,7 @@ import { NotFound } from './pages/NotFound';
 import { Home } from './pages/Home';
 import EventsHolder from './components/EventsHolder';
 import Booking from './pages/Booking';
+
 const router = createBrowserRouter([
   {
     path: "/",

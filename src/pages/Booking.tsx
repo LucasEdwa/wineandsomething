@@ -28,20 +28,25 @@ export default function Booking() {
     if (!event) return <div>Event not found</div>;
 
     return (
-        <div className={`${styles.padding} ${theme.background}`}>
+        <div className={`${styles.padding} ${theme.background} ${styles.booking.container}`}>
             <CalendarScene />
-            <h1 className={`${theme.text} text-2xl font-bold mb-4`}>
+            <h1 className={`${theme.text} ${styles.booking.h1}`}>
                 Book Event: {event.title}
             </h1>
-            <div className={`${theme.text} mb-6`}>
+            <div className={`${theme.text}  ${styles.booking.eventHolder}`}>
+                <div className={styles.booking.imageHolder}>
+                    <img src={event.imageUrl} alt={event.title} className={styles.booking.image} />
+                </div>
+                <div className={`${styles.booking.pHolder} ${theme.background}`}>
                 <p>Date: {event.date.toLocaleDateString()}</p>
                 <p>Time: {event.startTime} - {event.endTime}</p>
                 <p>Location: {event.location}</p>
                 <p>Price: ${event.price}</p>
+                </div>
             </div>
             
-            <form onSubmit={handleSubmit} className={styles.booking.form}>
-                <div className={styles.booking.formHolder}>
+            <form onSubmit={handleSubmit} className={`${styles.booking.form}`}>
+                <div className={`${styles.booking.formHolder} `}>
                     <input 
                         type="text" 
                         name="firstName" 

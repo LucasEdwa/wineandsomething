@@ -9,13 +9,13 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={`${styles.nav.container} ${theme.background}`}>
+    <nav className={`${theme.nav.container} ${theme.background}`}>
       <div className={`${styles.flexRow} ${styles.padding}  ${theme.background}`}>
         {/* Desktop Navigation */}
-        <ul className={`hidden sm:flex ${styles.nav.links}`}>
+        <ul className={` ${theme.nav.links}`}>
           {navLinks.map(({ id, title, path }) => (
             <li key={id}>
-              <Link className={`${theme.text} ${styles.nav.link.primary}`} to={path as string}>
+              <Link className={`${theme.text} ${theme.nav.link.primary}`} to={path as string}>
                 {title}
               </Link>
             </li>
@@ -23,7 +23,7 @@ export default function Navigation() {
         </ul>
 
         <button
-          className="sm:hidden text-2xl"
+          className={`${theme.text} ${theme.nav.button} `}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? '✕' : '☰'}
@@ -39,12 +39,12 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className={`sm:hidden ${theme.background} absolute left-0 right-0 p-4 z-10`}>
-          <ul className={`${styles.flexCol} `}>
+        <div className={`${theme.background} ${theme.nav.dropdown}`}>
+          <ul className={theme.nav.mobileLinks}>
             {navLinks.map(({ id, title, path }) => (
               <li key={id}>
                 <Link 
-                  className={`${theme.text} ${styles.nav.link.primary}`} 
+                  className={`${theme.text} ${theme.nav.link.primary}`} 
                   to={path as string}
                   onClick={() => setIsOpen(false)}
                 >

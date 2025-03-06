@@ -1,5 +1,10 @@
 import { TNavLink, TService, THeroSection } from '../types';
 import { TEvent } from '../types/index.d';
+import wine1 from '../assets/wine.1.jpg';
+import wine2 from '../assets/wine.2.jpg';
+import wine3 from '../assets/wine.3.jpg';
+import wine4 from '../assets/wine.4.jpg';
+
 export const navLinks: TNavLink[] = [
   {
     id: 'home',
@@ -27,7 +32,7 @@ export const services: TService[] = [
   {
     id: 'wine-tasting',
     title: 'Wine Tasting Events',
-    icon: '/wine-tasting',
+    icon: '/assets/wine-tasting.png',
     link: '/events/wine-tasting',
   },
   {     
@@ -52,7 +57,7 @@ export const services: TService[] = [
 
 export const heroSection: THeroSection[] = [
   {
-    title: 'Wine & Something for Women',
+    title: 'Wine & Something',
     description: 'Join our community of wine enthusiasts and discover new experiences through our curated events and activities.',
     buttonText: 'Join an Event',
     buttonLink: '/events',
@@ -66,7 +71,7 @@ export const upcomingEvents: TEvent[] = [
     id: '1',
     title: 'Summer Wine Tasting',
     description: 'Discover amazing summer wines',
-    imageUrl: '/images/summer-wine.jpg',
+    imageUrl: wine3,
     date: new Date('2024-06-15'),
     startTime: '18:00',
     endTime: '21:00',
@@ -82,7 +87,7 @@ export const upcomingEvents: TEvent[] = [
     id: '2',
     title: 'Art & Wine Workshop',
     description: 'Create your own art piece while enjoying wine',
-    imageUrl: '/images/art-workshop.jpg',
+    imageUrl: wine1,
     date: new Date('2024-07-20'),
     startTime: '18:00',
     endTime: '21:00',
@@ -98,7 +103,7 @@ export const upcomingEvents: TEvent[] = [
     id: '3',
     title: 'Book Club & Wine',
     description: 'Join our book club and enjoy wine',
-    imageUrl: '/images/book-club.jpg',
+    imageUrl: wine4,  
     date: new Date('2024-08-15'),
     startTime: '18:00',
     endTime: '21:00',

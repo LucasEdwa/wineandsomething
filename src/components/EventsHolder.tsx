@@ -9,7 +9,7 @@ export default function EventsHolder() {
     
     return (
         <>
-        <div className={`${styles.padding} ${theme.background}`}>
+        <div className={`${styles.padding} ${theme.background} ${styles.events.body}`}>
             <h1 className={`${theme.text} ${styles.events.title}`}>Upcoming Events</h1>
             <div className={`${styles.events.container}`}>
                 {upcomingEvents.map((event: TEvent) => (
@@ -17,6 +17,16 @@ export default function EventsHolder() {
                         <div className={`${styles.events.holder} ${theme.text}`}>
                             <h2 className={`${styles.events.title}`}>{event.title}</h2>
                             <p className={`${styles.events.p}`}>{event.description}</p>
+                           <div className={`${styles.events.imageHolder}`}>
+                            <img 
+                                src={event.imageUrl} 
+                                alt={event.title} 
+                                className={`${styles.events.image}`}
+                                onError={(e) => {
+                                    e.currentTarget.src = '/assets/wine.1.jpg'
+                                }}
+                            />
+                           </div>
                             <div className={`${styles.events.pHolder}`}>
                                 <p className={`${styles.events.p}`}>
                                     <span>📅</span> {event.date.toLocaleDateString()}
