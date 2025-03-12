@@ -104,4 +104,6 @@ export type THeroSection = {
 
 export type TNavLink = {
     id: string;
-} & Required<Pick<TCommonProps, 'title' | 'path'>>
+    title: string;
+    path: string;
+};

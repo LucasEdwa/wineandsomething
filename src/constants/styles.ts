@@ -127,10 +127,10 @@ export const styles = {
     input: "p-2 rounded bg-white/30 ",
     buttonHolder: "flex items-center justify-center",
     h1: "text-2xl font-bold mb-4",
-    imageHolder: "flex items-center justify-center gap-4",
+    imageHolder: "flex items-center justify-center gap-4 ",
     image: "w-full h-[200px] object-cover rounded-lg",
     pHolder: "flex flex-col gap-2  p-4 rounded-lg backdrop-blur-xl",
-    eventHolder: "flex gap-4 mb-6",
+    eventHolder: "flex gap-4 mb-6 flex-col",
 
   },
   
