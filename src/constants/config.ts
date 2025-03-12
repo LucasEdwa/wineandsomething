@@ -35,6 +35,8 @@ type TConfig = {
       };
     };
   } & TSection;
+
+  
   sections: {
     about: Required<TSection>;
     events: TSection;
@@ -46,16 +48,16 @@ type TConfig = {
 
 export const config: TConfig = {
   html: {
-    title: "Wine & Women — Social Events and Activities",
-    businessName: "Wine & Women",
-    email: "hello@wineandwomen.com",
-    phone: "+1 (555) 123-4567"
+    title: "Sip, Laugh, Repeat — Social Events and Activities",
+    businessName: "Wine 4 Women",
+    email: "hello@wine4women.com",
+    phone: "+1 (555) 123-4567",
   },
   hero: {
-    businessName: "Wine & Women",
+    businessName: "Sip, Laugh, Repeat",
     p: [
       "Join our community of wine enthusiasts",
-      "Experience unforgettable moments together"
+      "Experience unforgettable moments together",
     ],
   },
   contact: {
@@ -66,9 +68,9 @@ export const config: TConfig = {
         span: "Your Name",
         placeholder: "How should we call you?",
       },
-      email: { 
-        span: "Your Email", 
-        placeholder: "Where should we send the confirmation?" 
+      email: {
+        span: "Your Email",
+        placeholder: "Where should we send the confirmation?",
       },
       message: {
         span: "Special Requests",
@@ -84,8 +86,8 @@ export const config: TConfig = {
     about: {
       p: "Our Story",
       h2: "About Us.",
-      content: `Wine & Women is a unique social experience that brings together 
-      women who share a passion for wine and meaningful connections. We create 
+      content: `Sip, Laugh, Repeat is a unique social experience that brings together 
+      who share a passion for wine and meaningful connections. We create 
       intimate spaces where you can explore fine wines, engage in creative 
       activities, and build lasting friendships in a welcoming, supportive 
       environment.`,
@@ -115,4 +117,4 @@ export const config: TConfig = {
       happening in our community.`,
     },
   },
-}; 
+};

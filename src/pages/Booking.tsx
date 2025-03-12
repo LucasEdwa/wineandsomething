@@ -33,7 +33,7 @@ export default function Booking() {
             <h1 className={`${theme.text} ${styles.booking.h1}`}>
                 Book Event: {event.title}
             </h1>
-            <div className={`${theme.text}  ${styles.booking.eventHolder}`}>
+            <div className={`${theme.text}  ${styles.booking.eventHolder} w-full`}>
                 <div className={styles.booking.imageHolder}>
                     <img src={event.imageUrl} alt={event.title} className={styles.booking.image} />
                 </div>

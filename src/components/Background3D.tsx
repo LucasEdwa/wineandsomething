@@ -1,18 +1,16 @@
 import { Canvas } from '@react-three/fiber';
 import { useGLTF, OrbitControls, Stage } from '@react-three/drei';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
-interface ModelProps  {
-  scale?: number;
-  position?: [number, number, number];
-  rotation?: [number, number, number];
-}
 
-function Model(props: ModelProps) {
+function Model({ scrollRotation = 0 }) {
   const { nodes, materials } = useGLTF('/wine__cups_table_-_lowpoly.glb') as any;
 
   return (
-    <group {...props} dispose={null}>
+    <group 
+      rotation={[0, scrollRotation, 0]}
+      dispose={null}
+    >
       <group scale={0.01}>
         <group
           position={[-165.68486023, 459.42391968, -125.72822571]}
@@ -88,18 +86,28 @@ useGLTF.preload('/wine__cups_table_-_lowpoly.glb');
 
 export default function Background3D() {
   const { theme } = useTheme();
+  const [scrollRotation, setScrollRotation] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const rotation = (window.scrollY * 0.005) % (Math.PI * 2);
+      setScrollRotation(rotation);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className={`absolute top-0 left-0 w-full ${theme.background} h-screen -z-10`} >
+    <div className={`fixed top-0 left-0 w-full ${theme.background} h-screen -z-10`}>
       <Canvas shadows camera={{ position: [0, 2, 5], fov: 45 }}>
         <Suspense fallback={null}>
           <Stage environment="city" intensity={0.6}>
-            <Model />
+            <Model scrollRotation={scrollRotation} />
           </Stage>
           <OrbitControls 
-            enableZoom={false} 
-            autoRotate 
-            autoRotateSpeed={0.5}
+            enableZoom={false}
+            enableRotate={false}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 3}
           />

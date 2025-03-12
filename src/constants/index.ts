@@ -62,6 +62,7 @@ export const heroSection: THeroSection[] = [
     buttonLink: '/events',
     imageUrl: '/images/hero-image.jpg',
   },
+
 ];
 
 // You might also want to add some sample events

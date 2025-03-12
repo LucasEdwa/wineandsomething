@@ -93,14 +93,12 @@ export const styles = {
   container: "max-w-7xl mx-auto relative z-0",
   section: "sm:px-16 px-6 sm:py-16 py-10",
 
-  // Hero section text styles
   heroHeadText:
     "font-serif font-bold text-gray-50 lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",
   heroSubText:
     "text-gray-200 font-light lg:text-[30px] sm:text-[56px] xs:text-[20px] text-[16px] lg:leading-[40px]",
   heroSection: "mb-[310px] gap-8 items-center ",
-
-
+  
   events: {
     body: "flex flex-col lg:items-center  gap-10",
     container: "flex flex-col lg:flex-row gap-10",
