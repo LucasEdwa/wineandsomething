@@ -49,8 +49,8 @@ type TConfig = {
 export const config: TConfig = {
   html: {
     title: "Sip, Laugh, Repeat — Social Events and Activities",
-    businessName: "Wine 4 Women",
-    email: "hello@wine4women.com",
+    businessName: "Sip, Laugh, Repeat",
+    email: "hello@siplaughrepeat.com",
     phone: "+1 (555) 123-4567",
   },
   hero: {
