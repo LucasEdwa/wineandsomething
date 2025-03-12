@@ -4,25 +4,64 @@ import { useTheme } from "../context/ThemeContext";
 import { useParams } from "react-router";
 import { upcomingEvents } from "../constants";
 import CalendarScene from '../components/CalendarScene';
+import Swal from 'sweetalert2';
 
 export default function Booking() {
     const { eventId } = useParams();
     const event = upcomingEvents.find(e => e.id === eventId);
     const { theme } = useTheme();
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        
-
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const form = e.currentTarget;
-        const formData = new FormData(form);
-        const data = {
-            eventId,
-            eventTitle: event?.title,
-            ...Object.fromEntries(formData)
-        };
-        console.log('Booking submitted:', data);
-        form.reset();
+        
+        try {
+            const form = e.currentTarget;
+            const formData = new FormData(form);
+            const data = {
+                eventId,
+                eventTitle: event?.title,
+                ...Object.fromEntries(formData)
+            };
+
+            // Show loading alert
+            Swal.fire({
+                title: 'Processing...',
+                text: 'Creating your booking',
+                icon: 'info',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            console.log('Booking submitted:', data);
+            
+            // Simulate API call delay
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            // Show success alert
+            await Swal.fire({
+                title: 'Success!',
+                text: 'Your booking has been confirmed',
+                icon: 'success',
+                confirmButtonText: 'Great!',
+                confirmButtonColor: '#9B2242',
+            });
+
+            form.reset();
+        } catch (error) {
+            console.error('Booking error:', error);
+            
+            // Show error alert
+            await Swal.fire({
+                title: 'Oops...',
+                text: error instanceof Error ? error.message : 'Something went wrong',
+                icon: 'error',
+                confirmButtonText: 'Try Again',
+                confirmButtonColor: '#9B2242',
+            });
+        }
     };
 
     if (!event) return <div>Event not found</div>;
